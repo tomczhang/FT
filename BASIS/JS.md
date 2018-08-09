@@ -200,6 +200,9 @@ class ProxysingletonCreateDiv {
 
 # 11. 异步
 > Promise的理解
-让异步操作逻辑更加清晰，解决了异步操的作回调嵌套问题。promise对象有三种状态，pending、fulfilled和rejected，promise对象内部保存一个需要执行一段时间的异步操作，当异步操作执行结束后可以调用resolve或reject方法，来改变promise对象的状态，状态一旦改变就不能再变。new 一个promise后可以通过then方法，指定resolved和rejected时的回调函数。
-
-> Promise的实现
+Promise返回一个对象，你可以往这个对象上挂回调。它不能解决回调地狱，但可以通过链式调用，让异步操作逻辑更加清晰。promise对象有三种状态，pending、fulfilled和rejected，promise对象内部保存一个需要执行一段时间的异步操作，当异步操作执行结束后可以调用resolve或reject方法，来改变promise对象的状态，状态一旦改变就不能再变。new一个promise后可以通过then方法，指定resolved和rejected时的回调函数。
+> Generator/yield/next
+ES6新的一种异步回调方式，它实现了类似于同步编程的执行方式。yield是暂停标志，next是继续执行的执行器。
+> async/await
+是Generator函数的语法糖。有更好的语义和更广的适应性，内置执行器。
+> 回调函数
