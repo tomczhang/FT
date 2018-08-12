@@ -39,7 +39,24 @@ TCP提供一种面向连接的，可靠的字节流服务。
 502：错误网关
 504：网关超时
 
-2. 各种请求方式的优缺
-3. 跨域的请求方法
+# 5. 各种请求方式的优缺
+* ajax 优点：可以对请求各阶段进行监控
+* axios 优点：同样是xhr的封装，但是支持promise，同时支持node端发起请求，可以并发请求
+* Fetch 优点：基于新的标准，支持promise, 可以用来跨域，但是默认不带cookie, 请求错误和服务器错误不会引起reject
+
+# 6. 跨域的请求方法
+跨域：协议，域名，端口
+
+* 跨域请求通信
+  * JSONP
+  * webSocket通信协议
+  * Fetch设置mode: 'no-cors'，会有一个opaque的请求发送到后台
+  * 设置CROS跨域头
+* 跨域窗口通信
+  * document.domain: 用于同一基础域名之间共享cookie
+  * window.name
+  * #片段标识符
+  * window.postMessage
+
 
 

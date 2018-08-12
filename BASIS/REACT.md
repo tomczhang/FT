@@ -1,1 +1,16 @@
 1. 生命周期
+* 类调用
+  * getDefaultProps
+* 实例化
+  * getInitState
+  * componentWillMount
+  * render
+  * componentDidMount
+* 变更
+  * componentWillReceiveProps
+  * shouldComponentUpdate
+  * componentWillUpdate
+  * render
+  * componentDidUpdate
+* 卸载
+  * componentWillUnmount

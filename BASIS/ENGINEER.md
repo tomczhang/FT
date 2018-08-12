@@ -1,11 +1,4 @@
-1. Webpack打包出文件的结构
-2. vue减少vendor.js的大小
-3. 模块化
-5. babel
-6. yarn/npm
-
 # 1.前端模块化
-
 > 描述一下前端模块化
 前端复杂的代码环境，多个script之间互相污染全局变量，按需加载等需求，产生了前端模块化。
 * CommonJS: 用同步require的方法加载依赖项。Nodejs和browserify都用的这种方法。
@@ -18,4 +11,19 @@
   * 带有插件系统，可以完成很多强大的功能
 
 # 2. Webpack模块化原理
+> webpack的原理
+webpack打包出来的文件其实是立即执行函数，然后通过webpack自己定义的exports和require来实现模块化。对于代码分割，webpack使用jsonp的形式进行js异步加载。
 
+# 3. babel
+> 描述一下babel
+* babel-core: ES6 Code
+* babel-polyfill: ES6 API
+* babel preset: 方案/提案
+* bebel plugin:  提供一些单一功能
+
+# 4. yarn/npm
+> 描述包管理工具yarn/npm区别：
+yarn有缓存，安全（每个安装包被执行前校验其完整性），可靠，lockfile来准确控制版本。
+package-lock.json和package.json会有一系列问题。
+
+# 5. REST API/Graph
