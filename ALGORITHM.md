@@ -36,6 +36,21 @@
 * 二叉树，分治算法
 * 空间换时间
 * 数组
+  * array.concat(Arr1, Arr2)
+  * array.filter(function(item, index, arr), thisValue)
+  * array.findIndex/find(function(item, index, arr), thisValue)
+  * Array.from(Object, mapFunction, thisValue)
+  * array.includes(item, fromIndex)
+  * array.indexOf/lastIndexOf(item, fromIndex)
+  * Array.isArray(object)
+  * array.join(seperator)
+  * array.map/forEach/some(function(item, index, arr), thisValue)
+  * array.shift()/pop()/push()/unshift()
+  * array.reduce/reduceRight(function(total, item, index, arr), thisValue)
+  * array.reverse()/sort()
+  * array.slice/splice(start, end)
+
+
 * 字符串
   * str.charAt(char)
   * str.concat(str1,str2...)

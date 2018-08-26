@@ -26,4 +26,3 @@ webpack打包出来的文件其实是立即执行函数，然后通过webpack自
 yarn有缓存，安全（每个安装包被执行前校验其完整性），可靠，lockfile来准确控制版本。
 package-lock.json和package.json会有一系列问题。
 
-# 5. REST API/Graph
