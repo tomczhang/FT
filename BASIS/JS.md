@@ -199,6 +199,42 @@ class ProxysingletonCreateDiv {
 > 实现观察者
 
 核心：用一个数组保存要通知的项，当一个对象变化后，逐一通知其他对象。
+```
+class publisher {
+    constructor() {
+        this.subscribers = {
+            any: []
+        }
+    }
+    subscribe(fn, type = 'any') {
+        if (typeof this.subscribers[type] === 'undefined') {
+            this.subscribers[type] = []
+        }
+        this.subscribers[type].push(fn)
+    }
+    unsubscribe(fn, type) {
+        this.visitSubscribers('unsubscribe', fn, type)
+    }
+    publish(publication, type) {
+        this.visitSubscribers('publish', publication, type)
+    }
+    visitSubscribers(action, arg, type = 'any') {
+        this.subscribers[type].forEach((currentValue, index, array) => {
+            if (action === 'publish') {
+                currentValue(arg)
+            } else if (action === 'unsubscribe') {
+                if (currentValue === arg) {
+                    this.subscribers[type].splice(index, 1)
+                }
+            }
+        })
+    }
+}
+
+let publish = new publisher();
+
+```
+
 
 # 10. ES6新特性
 * 语法糖：class，箭头函数，对象属性的简写
@@ -223,3 +259,5 @@ ES6新的一种异步回调方式，它实现了类似于同步编程的执行�
 是Generator函数的语法糖。有更好的语义和更广的适应性，内置执行器。
 > 回调函数
 > 基于事件的异步模型
+
+

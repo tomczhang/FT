@@ -14,6 +14,13 @@
 > webpack的原理
 webpack打包出来的文件其实是立即执行函数，然后通过webpack自己定义的exports和require来实现模块化。对于代码分割，webpack使用jsonp的形式进行js异步加载。
 
+# 3. Webpack优化
+* 代码压缩 Uglify-Webpack-plugin
+* 样式的分离和压缩 ExtractTextWebpackPlugin
+* 提取公共代码 DllPlugin,CommonChunkPlugin
+* 将相关的模块放在一起，减少闭包 ModuleConcatentionPlugin
+* tree shaking: 去掉没有引用的代码
+
 # 3. babel
 > 描述一下babel
 * babel-core: ES6 Code
