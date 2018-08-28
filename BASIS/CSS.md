@@ -26,7 +26,12 @@
 
 > BFC的定义
 
-BFC: 块级格式上下文。BFC就是一个页面上独立的容器，规定了内部的块级元素如何布局，并且这些块级元素不会影响外部元素。 
+BFC: 块级格式上下文。BFC就是一个页面上独立的容器，规定了内部的块级元素如何布局，并且这些块级元素不会影响外部元素。BFC有以下约束规则：
+* 内部的BOX会在垂直方向上一个接一个的放置
+* 同一个BFC的两个相邻BOX的margin会发生重叠
+* 每个元素的左外边距和包含块的左边界相接触
+* BFC的区域不会和float的区域重叠
+* 计算BFC高度时，浮动子元素也参与计算
 
 > BFC的作用
 * 自适应两栏布局
@@ -57,8 +62,6 @@ clear: both;
 * 伪类：伪类用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。
 * 伪元素：伪元素用于创建一些不在文档树中的元素，并为其添加样式。
 
-// 图片
-
 # 5. position的区别
 * static: 默认值，元素正常出现在文档流中
 * relative: 相对定位，对于元素正常位置进行定位，偏移后原本的位置仍占据空间，不会影响其他元素的位置，未脱离文档流。父节点设置为relative之后，子节点可以相对父节点绝对定位
@@ -72,6 +75,7 @@ clear: both;
 * margin: 0 auto;
 * 有固定宽度，position:relative;left:50%;margin-left: -1/2宽度;
 * CSS3，position:relative;left:50%;transform:translateX(-50%);
+* display:flex;justify-content:space-around;
 > 垂直居中方法
 * vertical-align:middle;
 * line-height和height同高
