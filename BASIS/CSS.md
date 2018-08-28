@@ -108,4 +108,27 @@ border-bottom: 100px solid red;
 > 实现一个菱形
 transform skew
 
-6. CSS3动画
+# 6. CSS3动画
+div {
+  animation: funcName 5s;
+}
+@keyframes funcName {
+  0% {css}
+  100% {css}
+}
+# 7. 重绘/重排
+浏览器下载完页面的内容后，会构建DOM树和渲染树，DOM树表示页面结构，渲染树表示节点如何显示。当DOM的改变影响了节点的几何属性，这时候浏览器就会计算重新计算节点和其他节点的几何属性和位置。浏览器会使渲染树受到影响的部分失效，并重新构建渲染树，这叫做重排。完成重排后，浏览器会重新绘制受到影响的部分到页面中，也叫做重绘。
+* 引起重排的原因
+  * 添加/删除可见的DOM元素
+  * 元素的位置改变
+  * 元素的尺寸改变
+  * 元素的内容改变
+  * 页面渲染初始化
+  * 浏览器窗口改变
+# 8. CSS3特性
+* border-radius
+* border-shadow
+* CSS3 2D转换，translate, rotate
+* CSS3 3D转换
+* CSS3 过渡，transition
+* CSS3 动画

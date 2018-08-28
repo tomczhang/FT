@@ -109,3 +109,28 @@ https://segmentfault.com/a/1190000011225943
 #5. 一个数组中其他值都出现了两次，只有一个值出现了一次，找出这个值
 * Hash
 * 异或
+```
+var test = [1,2,2,3,3,4,4];
+var map = {};
+for(let i =0;i< test.length;i++) {
+  const item = test[i];
+  if (map[item]) {
+    map[item] = 1;
+  } else {
+    map[item]++;
+  }
+}
+for(let item of map) {
+  if(item === 1) {
+    return item;
+  }
+}
+```
+# 6. isNaN实现
+NaN number类型，和自身不相等
+
+Number.isNaN = function (value) {
+    return typeof value === 'number' && isNaN(value);//es6下面已经这样实现
+}
+# 7. 手写DeepEqual
+# 8. 手写DeepClone

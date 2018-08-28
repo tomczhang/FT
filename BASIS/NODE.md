@@ -26,11 +26,12 @@ egg是基于Koa的，它的好处是约定优先，它规定了项目的结构�
 * 异步IO
 * 事件驱动
 * 跨平台
-* 每个Node实例都是单线程处理程序的
+* 单线程单进程
+NodeJs的单线程是指只有一个JS引擎在主线程上运行，其他异步IO和事件相关的线程通过libuv来实现内部线程池和调度。libuv中存在EventLoop，通过EventLoop来实现多线程的效果。
+进程是资源容器，线程是执行单位。Node默认是单进程的，这样不利于多核处理，所以使用child_process可以实现一个master主进程，多个worker子进程的多进程模式。cluster意为集成，一方面集成了child_process.fork创建node子进程的方式，一方面集成了创建多个子进程后，自动控制负载均衡的方式。
 
 # 4. Node的应用场景
 * IO密集型
-* CPU密集型
 * 长链接应用
 
 # 5. XSS/CSRF
