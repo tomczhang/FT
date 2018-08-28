@@ -104,27 +104,44 @@ xhr.send(null);
 #3. 手写JSONP
 
 #4. 手写双向绑定
-https://segmentfault.com/a/1190000011225943
-
+```
+var obj={}
+Object.defineProperty(obj,'txt',{
+    get:function(){
+        return obj
+    },
+    set:function(newValue){
+        document.getElementById('txt').value = newValue
+        document.getElementById('show-txt').innerHTML = newValue
+    }
+})
+document.addEventListener('keyup',function(e){
+    obj.txt = e.target.value
+})
+```
 #5. 一个数组中其他值都出现了两次，只有一个值出现了一次，找出这个值
 * Hash
 * 异或
 ```
 var test = [1,2,2,3,3,4,4];
-var map = {};
-for(let i =0;i< test.length;i++) {
-  const item = test[i];
-  if (map[item]) {
-    map[item] = 1;
-  } else {
-    map[item]++;
+function getSingle () {
+  var map = {};
+  for(let i =0;i< test.length;i++) {
+    const item = test[i];
+    if (!map[item]) {
+      map[item] = 1;
+    } else {
+      map[item]++;
+    }
+  }
+  for(let item in map) {
+    console.log(map[item])
+    if(map[item] === 1) {
+      return item;
+    }
   }
 }
-for(let item of map) {
-  if(item === 1) {
-    return item;
-  }
-}
+
 ```
 # 6. isNaN实现
 NaN number类型，和自身不相等
@@ -132,5 +149,18 @@ NaN number类型，和自身不相等
 Number.isNaN = function (value) {
     return typeof value === 'number' && isNaN(value);//es6下面已经这样实现
 }
-# 7. 手写DeepEqual
-# 8. 手写DeepClone
+
+# 7. 手写DeepClone
+```
+function deepClone(obj) {
+  if (obj === null || typeof obj !== 'object') return obj;
+  if (obj instanceof Boolean) return new Boolean(obj.valueOf());
+  if (obj instanceof Number) return new Number(obj.valueOf());
+  if (obj instanceof String) return new String(obj.valueOf());
+  if (obj instanceof RegExp) return new RegExp(obj.valueOf());
+  if (obj instanceof Date) return new Date(obj.valueOf());
+  var cpObj = obj instanceof Array ? [] : {};
+  for (var key in obj) cpObj[key] = myClone(obj[key]);
+  return cpObj;
+}
+```
