@@ -88,3 +88,7 @@ VueRouter既可以使用Hash的方式，也可以使用History的方式，其中
       }, 1000)
     })
     ```
+
+# 5. Vue和React的区别
+相同点：都有Virtual DOM
+不同点：DOM diff的算法不一样。

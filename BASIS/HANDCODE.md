@@ -101,9 +101,8 @@ xhr.open("get", "example.txt", true); //添加onreadystatechange事件后使用o
 xhr.send(null);
 
 ```
-#3. 手写JSONP
 
-#4. 手写双向绑定
+#3. 手写双向绑定
 ```
 var obj={}
 Object.defineProperty(obj,'txt',{
@@ -119,7 +118,7 @@ document.addEventListener('keyup',function(e){
     obj.txt = e.target.value
 })
 ```
-#5. 一个数组中其他值都出现了两次，只有一个值出现了一次，找出这个值
+#4. 一个数组中其他值都出现了两次，只有一个值出现了一次，找出这个值
 * Hash
 * 异或
 ```
@@ -140,17 +139,17 @@ function getSingle () {
       return item;
     }
   }
-}
+} 
 
 ```
-# 6. isNaN实现
+# 5. isNaN实现
 NaN number类型，和自身不相等
 
 Number.isNaN = function (value) {
     return typeof value === 'number' && isNaN(value);//es6下面已经这样实现
 }
 
-# 7. 手写DeepClone
+# 6. 手写DeepClone
 ```
 function deepClone(obj) {
   if (obj === null || typeof obj !== 'object') return obj;
@@ -160,7 +159,7 @@ function deepClone(obj) {
   if (obj instanceof RegExp) return new RegExp(obj.valueOf());
   if (obj instanceof Date) return new Date(obj.valueOf());
   var cpObj = obj instanceof Array ? [] : {};
-  for (var key in obj) cpObj[key] = myClone(obj[key]);
+  for (var key in obj) cpObj[key] = deepClone(obj[key]);
   return cpObj;
 }
 ```
