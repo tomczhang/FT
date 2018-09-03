@@ -5,7 +5,7 @@
   * getInitState
   * componentWillMount
   * render
-  * componentDidMount
+  * componentDidMount ajax
 * 变更
   * componentWillReceiveProps
   * shouldComponentUpdate
@@ -26,3 +26,7 @@ element diff比较：设置唯一key。对于同一层级的节点，进行移�
 * 避免DOM
   * shouldComponentUpdate
   * immutable.js
+
+# 4. redux
+* 主要用于复杂的父子组件通信和状态更新
+* Store, action, reducer

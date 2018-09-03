@@ -90,5 +90,30 @@ VueRouter既可以使用Hash的方式，也可以使用History的方式，其中
     ```
 
 # 5. Vue和React的区别
-相同点：都有Virtual DOM
-不同点：DOM diff的算法不一样。
+* 相同点：
+  * 都有Virtual DOM
+  * 都支持组件化，都支持API和文件两种组件声明方式
+  * 都是数据驱动视图
+
+
+不同点：
+  * DOM diff的算法不一样
+  * Vue是MVVM框架，双向绑定数据流，React是单向数据流，严格来说只针对MVC的V层
+  * Vue有模版引擎，v-if, v-for
+  * 生命周期不一样
+  * 组件写法不一样，React JSX+inline js, Vue webpack+vue-loader
+
+# 6. Nuxt
+* Nuxt的优点：
+  * 无需手动划分路由，它会根据pages文件夹下的目录生成路由
+  * 无需考虑数据传输问题，会自动异步请求数据
+  * 内置了webpack
+
+* Nuxt的流程：
+  * 实例化Nuxt()类
+  * 实例对象会依次调用build, render, renderRoute, renderAndGetWindow, generate方法
+  * build 运行generateRouteAndFiles方法，根据layout和page生成模版文件和路由配置，然后把解析好的内容放到.nuxt文件夹下; 运行buildFiles方法，生成dist文件
+  * render render先处理一系列路径问题，然后调用renderRoute方法获得响应所需的内容并完成相应。
+  * renderRoute 判断是否是服务器端渲染，是的化调用vue的bundleRender方法，将html内容渲染完毕再整体输出，如果不是的化，渲染一个div节点，交给客户端渲染
+  * 最后使用renderAndGetWindow来判断生成的html是否正常，并发出通知
+

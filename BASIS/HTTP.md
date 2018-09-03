@@ -58,5 +58,11 @@ TCP提供一种面向连接的，可靠的字节流服务。
   * #片段标识符
   * window.postMessage
 
+# 7.http与https
+* https就是http+SSL安全协议
+* http是超文本传输协议，信息是明文传输，https是具有安全性的ssl加密传输协议
+* 使用完全不同的连接方式，端口也不一样，80 443
+* http的连接是无状态的，https构建的是加密传输，身份认真的协议
+
 
 
