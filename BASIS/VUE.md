@@ -97,7 +97,6 @@ VueRouter既可以使用Hash的方式，也可以使用History的方式，其中
 
 
 不同点：
-  * DOM diff的算法不一样
   * Vue是MVVM框架，双向绑定数据流，React是单向数据流，严格来说只针对MVC的V层
   * Vue有模版引擎，v-if, v-for
   * 生命周期不一样

@@ -163,3 +163,32 @@ function deepClone(obj) {
   return cpObj;
 }
 ```
+
+# 7. 函数防抖/截流
+```
+let debounce = function (fn, delay) {
+  const self = this;
+  return function (args) {
+    clearTimeout(fn.id);
+    fn.id = setTimeout(function () {
+      fn.apply(self, args);
+    }, delay);
+  }
+}
+let throttle = function (fn, delay) {
+  const self = this;
+  let last;
+  return function (args) {
+    let now = Date.now();
+    if (last && now < last + dalay) {
+      clearTimeout(fn.id);
+      fn.id = setTimeout(function () {
+        fn.apply(self, args);
+      }, delay);
+    } else {
+      last = now;
+      fn.apply(self, args);
+    }
+  }
+}
+```
